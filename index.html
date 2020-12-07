@@ -9,13 +9,45 @@
     <div id="div1">
         <div id="div2">
             <p>Jeg heter Tobias, jeg er 18 år og liker musikk. Billie Eilish er mit idol og jeg håper at hun verdsetter meg for den personen jeg virkelig er.</p>
-            <div id="valgknapp">
-                <button>Ja, helt enig</button>
+            <div>
+                <button>JA, helt enig</button>
                 <button>E itj helt sikker ass</button>
-                <button>mongo</button>
-                <button>Karl Arne</button>
             </div>
         </div>
     </div>
+    
+    
+    
+<script>
+    const container = document.querySelector("#div2 p");
+    
+    let navn = "Brynjolf"
+    let yess = `Hallo jeg er xxNavnxx, og jeg er her.`;
+    
+    function yes() {
+        navn = "Tobias";
+        
+        yess = yess.replace("xxNavnxx", navn);
+        
+        container.innerHTML = yess;
+    };
+    
+    
+    const choice = function(num, content, newInpsArr) {
+        container.innerHTML = content;
+        
+        let inps = document.querySelectorAll("button")
+        
+        
+        for (i = 0; i < newInpsArr.length; i++) {
+            let btn = document.createElement("button");
+            btn.addEventListener("click", choice(stage++, e));
+        };
+        
+        
+    };
+    
+    
+</script>
 </body>
 </html>
