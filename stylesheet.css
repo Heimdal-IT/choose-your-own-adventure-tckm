@@ -28,8 +28,13 @@ body{
     font-family: adventure;
     font-size: 30px;
     line-height: 0.8em;
-    color: #b35900;
+    color: #000;
+    text-shadow: 0 0 3px rgba(255,255,255,0.7);
+    font-weight: bold;
     border-radius: 10px;
+}
+#div3{
+    
 }
 #valgknapp{
     display: flex;
@@ -37,12 +42,14 @@ body{
     position: relative;
     margin: auto;
     justify-content: center;
+    height: auto;
+    display: block;
 }
 #valgknapp button{
     margin: 5px;
     opacity: 0.75;
-    background-image: url(wooden.jpg);
-    background-size: contain;
+    background-image: url(Wood%20Wall.jpg);
+    background-size: 223.7px;
     border: none;
     color: rgb(255,255,255);
     height: 25px;
