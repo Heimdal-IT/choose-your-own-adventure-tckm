@@ -8,106 +8,31 @@
 <body>
     <div id="div1">
         <div id="div2">
-            <p>Jeg heter Tobias, jeg er 18 år og liker musikk. Billie Eilish er mit idol og jeg håper at hun verdsetter meg for den personen jeg virkelig er.</p>
-            <div>
-                <button>JA, helt enig</button>
-                <button>E itj helt sikker ass</button>
+            <div id="div3">
+                <div id="race">
+                    <input type="radio" id="viking" name="race"><label for="viking">Viking</label>
+                    <input type="radio" id="elf" name="race"><label for="elf">Elf</label>
+                    <input type="radio" id="dwarf" name="race"><label for="dwarf">Dwarf</label>
+                </div>
+                
+                <input type="text" id="navn" placeholder="Navn">
+                <div id="sex">
+                    <input type="radio" id="mann" name="1010"><label for="mann">Mann</label>
+                    <input type="radio" id="dame" name="1010"><label for="dame">Dame</label>
+                </div>
+                
             </div>
+            
+            
+            
+            <!--<p>Jeg heter Tobias, jeg er 18 aar og liker musikk. Billie Eilish er mitt idol og jeg haaper at hun verdsetter meg for den personen jeg virkelig er.</p>
+            <div id="valgknapp">
+                <button>Ja, helt enig</button>
+                <button>E itj helt sikker ass</button>
+                <button>mongo</button>
+                <button>Karl Arne</button>
+            </div>-->
         </div>
     </div>
-    
-    
-    
-<script>
-    const container = document.querySelector("#div2 p");
-    
-    let data = [
-        {
-            story: "You wake up.",
-            choices: [
-                {description: "Leave", agility: 0.9, strength: 0, win: "you left", fail: "you got lost"},
-                {description: "Fight", agility: 0, strength: 0.9, win: "he dead now", fail: "you got clobberd"}
-            ] 
-        },
-        {
-            story: "",
-            choices: []
-        },
-        {
-            story: "",
-            choices: []
-        }
-    ];
-    
-    const scene = function(lvl) {
-        let content = data[lvl].story;
-        
-        for (i = 0; i < data[lvl].choices.length; i++) {
-            const iData = data[lvl].choices[i];
-            
-            let btn = document.createElement("button");
-            btn.setAttribute("id", )
-            btn.setAttribute("value", iData.description);
-            
-            btn.addEventListener("click", makeChoice);
-        };
-        
-        container.innerHTML = content;
-    };
-    
-    const makeChoice = function() {
-        
-    };
-    
-    
-    
-    
-    let navn = "Brynjolf"
-    let yess = `Hallo jeg er xxNavnxx, og jeg er her.`;
-    
-    function yes() {
-        navn = "Tobias";
-        
-        yess = yess.replace("xxNavnxx", navn);
-        
-        container.innerHTML = yess;
-    };
-    
-    
-    const choice = function(num, content, newInpsArr) {
-        container.innerHTML = content;
-        
-        let inps = document.querySelectorAll("button")
-        
-        
-        for (i = 0; i < newInpsArr.length; i++) {
-            let btn = document.createElement("button");
-            btn.addEventListener("click", choice(stage++, e));
-        };
-        
-        
-    };
-    
-    
-    //let cycle = 0;
-    function tester(cycle) {
-        
-        console.log("mats e kul" + cycle);
-        
-        let btn = document.createElement("button");
-        container.innerHTML = "";
-        container.appendChild(btn);
-        
-        btn.addEventListener("click", tester(cycle++));
-        //btn.addEventListener("click", function(){console.log("what");});
-        //btn.addEventListener("click", tester(cycle));
-        
-    };
-    //tester(0);
-    
-    
-    
-    
-</script>
 </body>
 </html>

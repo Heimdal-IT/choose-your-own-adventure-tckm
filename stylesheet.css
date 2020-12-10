@@ -34,7 +34,7 @@ body{
     border-radius: 10px;
 }
 #div3{
-    
+    font-size: 50px;
 }
 #valgknapp{
     display: flex;
@@ -53,6 +53,12 @@ body{
     border: none;
     color: rgb(255,255,255);
     height: 25px;
+}
+#race{
+    margin-bottom: 20px;
+}
+#sex{
+    margin-top: 20px;
 }
 
 
