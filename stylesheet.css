@@ -17,7 +17,7 @@ body{
     height: 100vh;
 }
 #div2{
-    background-color: rgba(0,0,0,0.3599999);
+    background-color: rgba(255,255,255,0.3599999);
     color: rgb(255,255,255);
     padding: 50px;
     position: relative;
@@ -51,7 +51,8 @@ body{
     background-image: url(Wood%20Wall.jpg);
     background-size: 223.7px;
     border: none;
-    color: rgb(255,255,255);
+    /*color: rgb(255,255,255);*/
+    color: black;
     height: 25px;
 }
 #race{
