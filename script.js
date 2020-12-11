@@ -1,7 +1,6 @@
 
-
-const container = document.querySelector("#div2 p");
-const btnCont = document.getElementById("valgknapp");
+const storyCont = document.getElementById("story");
+const btnCont = document.getElementById("choice");
 
 
 let data = [
@@ -34,7 +33,6 @@ let character = {
     inventory: ["chainmail", "potion"]
 };
 
-
 const personalize = function(content) {
     let result = content;
     result = result
@@ -61,7 +59,7 @@ const scene = function(lvl) {
         btn.addEventListener("click", makeChoice);
     };
 
-    container.innerHTML = content;
+    storyCont.innerHTML = content;
 };
 
 
@@ -80,10 +78,11 @@ const makeChoice = function() {
         content = iData.loss;
     };
     
-    container.innerHTML = personalize(content);
+    storyCont.innerHTML = personalize(content);
     
     let nxt = document.createElement("button");
     nxt.innerHTML = "Continue.";
+    
     
     
 };
