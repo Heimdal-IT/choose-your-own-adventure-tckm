@@ -56,20 +56,19 @@ const scene = function(lvl) {
         btn.setAttribute("data-location", "data["+ lvl +"].choices["+ i +"]");
         btnCont.appendChild(btn);
         
-        btn.addEventListener("click", makeChoice);
+        btn.addEventListener("click", function(){makeChoice(this, lvl)});
     };
 
     storyCont.innerHTML = content;
 };
 
 
-const makeChoice = function() {
-    let iData = eval(this.getAttribute("data-location"));
+const makeChoice = function(btn, lvl) {
+    let iData = eval(btn.getAttribute("data-location"));
     let agility = +character.agility * +iData.agility;
     let strength = +character.strength * +iData.strength;
     
     let content = "";
-    
     if ((agility + strength) > Math.random()*100) {
         console.log("win");
         content = iData.win;
@@ -77,14 +76,13 @@ const makeChoice = function() {
         console.log("lose");
         content = iData.loss;
     };
-    
     storyCont.innerHTML = personalize(content);
     
     let nxt = document.createElement("button");
     nxt.innerHTML = "Continue.";
-    
-    
-    
+    btnCont.innerHTML = "";
+    btnCont.appendChild(nxt);
+    nxt.addEventListener("click", function(){scene(lvl+1)});
 };
 
 
