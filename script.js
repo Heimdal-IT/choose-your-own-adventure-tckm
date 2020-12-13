@@ -85,8 +85,9 @@ const scene = function(lvl) {
         btn.addEventListener("click", function(){makeChoice(this, lvl)});
     };
 
-    storyCont.innerHTML = content;
+    storyCont.innerHTML = personalize(content);
     background.style.backgroundImage = "url("+ scenes[lvl].background +")";
+    
     bgAudioSrc.setAttribute("src", scenes[lvl].audio.source);
     bgAudio.load();
     bgAudio.currentTime = scenes[lvl].audio.startTime;
@@ -98,21 +99,28 @@ const makeChoice = function(btn, lvl) {
     let agility = +character.agility * +iData.agility;
     let strength = +character.strength * +iData.strength;
     
-    let content = "";
-    if ((agility + strength) > Math.random()*100) {
-        console.log("win");
-        content = iData.win;
-    } else {
-        console.log("lose");
-        content = iData.loss;
-    };
-    storyCont.innerHTML = personalize(content);
-    
-    let nxt = document.createElement("button");
-    nxt.innerHTML = "Continue.";
     btnCont.innerHTML = "";
-    btnCont.appendChild(nxt);
-    nxt.addEventListener("click", function(){scene(lvl+1)});
+    if ((agility + strength) > Math.random()*100) {
+        storyCont.innerHTML = personalize(iData.win);
+        
+        let nxt = document.createElement("button");
+        nxt.innerHTML = "Continue.";
+        btnCont.appendChild(nxt);
+        nxt.addEventListener("click", function(){scene(lvl+1)});
+    } else {
+        storyCont.innerHTML = personalize(iData.loss);
+        
+        let restart = document.createElement("button");
+        restart.innerHTML = "Restart game.";
+        btnCont.appendChild(restart);
+        restart.addEventListener("click", function(){scene(0)});
+        
+        let checkpoint = document.createElement("button");
+        checkpoint.innerHTML = "Try again from Checkpoint."
+        btnCont.appendChild(checkpoint);
+        checkpoint.addEventListener("click", function(){scene(lvl)});
+    };
+    
 };
 
 
