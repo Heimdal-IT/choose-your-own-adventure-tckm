@@ -1,5 +1,7 @@
 const startButton = document.getElementById("startButton");
 const form = document.getElementById("form");
+const inpName = document.getElementById("inpName");
+
 const storyCont = document.getElementById("story");
 const btnCont = document.getElementById("choice");
 const background = document.getElementById("div1");
@@ -48,7 +50,7 @@ let character = {
 };
 
 const getCharacter = function() {
-    let name = document.getElementById("inpName").value;
+    let name = inpName.value;
     let sex = getRadio("sex").value;
     let race = getRadio("race").value;
     let strength;
@@ -78,7 +80,6 @@ const getCharacter = function() {
 
 const getRadio = function(group) {
     let radios = document.querySelectorAll("input[type=\"radio\"][name=" + group + "]");
-    console.log(radios);
     for (i = 0; i < radios.length; i++) {
         if (radios[i].checked) {
             return radios[i];
@@ -166,11 +167,15 @@ const makeChoice = function(btn, lvl) {
 
 
 const startGame = function() {
-    getCharacter();
-    form.style.display = "none";
-    scene(0);
+    if (inpName.value && getRadio("sex") !== undefined && getRadio("race") !== undefined) {
+        getCharacter();
+        form.style.display = "none";
+        scene(0);
+    } else {
+        alert("Choose character");
+    };
 };
 
 
-startButton.addEventListener("click", startGame);
 
+startButton.addEventListener("click", startGame);
