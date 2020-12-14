@@ -1,4 +1,5 @@
-
+const startButton = document.getElementById("startButton");
+const form = document.getElementById("form");
 const storyCont = document.getElementById("story");
 const btnCont = document.getElementById("choice");
 const background = document.getElementById("div1");
@@ -36,13 +37,53 @@ let scenes = [
     }
 ];
 
+
 let character = {
     name: "Brynjolf",
     sex: "male",
     race: "viking",
     agility: 100,
     strength: 100,
-    inventory: ["chainmail", "potion"]
+    inventory: []
+};
+
+const getCharacter = function() {
+    let name = document.getElementById("inpName").value;
+    let sex = getRadio("sex").value;
+    let race = getRadio("race").value;
+    let strength;
+    let agility;
+
+    if (race === "elf") {
+        strength = 75;
+        agility = 150;
+    } else if (race === "dwarf") {
+        strength = 150;
+        agility = 75;
+    } else {
+        strength = 100;
+        agility = 100;
+    };
+
+    character = {
+        name: name,
+        sex: sex, 
+        race: race,
+        agility: agility,
+        strength: strength,
+        inventory: []
+    };
+
+};
+
+const getRadio = function(group) {
+    let radios = document.querySelectorAll("input[type=\"radio\"][name=" + group + "]");
+    console.log(radios);
+    for (i = 0; i < radios.length; i++) {
+        if (radios[i].checked) {
+            return radios[i];
+        };
+    };
 };
 
 const capitalize = function(string){
@@ -61,8 +102,8 @@ const personalize = function(string) {
     return string
         .replace("-NAME-", character.name)
         .replace("-race-", character.race)
-        .replace("-RACE-", capitalize(character.sex))
-        .replace("-sex-", character.race)
+        .replace("-RACE-", capitalize(character.race))
+        .replace("-sex-", character.sex)
         .replace("-SEX-", capitalize(character.sex))
         .replace("-pronoun-", pronoun)
         .replace("-PRONOUN-", capitalize(pronoun))
@@ -124,6 +165,12 @@ const makeChoice = function(btn, lvl) {
 };
 
 
+const startGame = function() {
+    getCharacter();
+    form.style.display = "none";
+    scene(0);
+};
 
 
+startButton.addEventListener("click", startGame);
 
