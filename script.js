@@ -10,10 +10,10 @@ const bgAudioSrc = document.getElementById("bgAudioSrc");
 
 let scenes = [
     {
-        story: "You wake up.",
+        story: "“Get up -RACE-!” you hear a fainted shout in the distance. You find yourself all curled up in the mud. Your vision is completely foggy, and you can barely point out the things around you, when suddenly a big dwarf trembles in front of you and slaps you quite hard and bold on your cheek. “I said get up! This is no place to end the tale soldier!” That's when you finally snap back to reality.-SPACE-“Alright soldier, get ye bum up and keep fighting!” You stumble up on your feet, but you can’t seem to find your sword. “Ye need to find their leader soldier, run into the forest and find an abandoned cave, there it should be a clue to where their leader is located!”.-SPACE-You were just about to leave when suddenly you see an enormous orc charge towards you. You start to tremble as you try to avoid all of his attacks. The orc isn’t quite an experienced fighter, so he manages to swing his club in between two boulders. You then see a sword in the ground and pick it up. You can now make out some kind of path behind the orc that should lead to the cave your fellow comrade was talking about.-SPACE-You then spot a set of shiny chainmail down on the ground. ",
         choices: [
-            {description: "Leave", agility: 0.9, strength: 0, win: "you left", loss: "you got lost"},
-            {description: "Fight", agility: 0, strength: 0.9, win: "he dead now", loss: "you got clobberd"}
+            {description: "Pick up chainmail", agility: 0, strength: 0.9, win: "Picked up chainmail", loss: "Too heavy"},
+            {description: "Not pick up chainmail", agility: 1, strength: 1, win: "Didn't pick up chainmail", loss: ""}
         ],
         background: "krig.jpg",
         audio: {
@@ -22,21 +22,67 @@ let scenes = [
         }
     },
     {
-        story: "You see a tree",
+        story: "You now start to approach the orc that still has its club stuck in between the two boulders, janking it as hard as it can. You now see a chance.-SPACE-You now see a chance.",
         choices: [
-            {description: "Climb", agility: 0.6, strength: 0.1, win: "you on top of tree", loss: "you fell down"},
-            {description: "Punch", agility: 0.1, strength: 0.6, win: "you punched the tree", loss: "tree punched back"}
+            {description: "Attack orc", agility: 0, strength: 0.9, win: "You charge towards the ginormous orc with your sword held high. He sees you covered with rage and might, and tries to punch you with his own curled up fists. His attack is nothing compared with yours. You then swing your sword with a fatal swift, and decapitate the orc.", loss: "You try to attack the orc, but as you go for the final blow, he suddenly gets his club loose and knocks you down. He then rises his mighty club up above his wart covered face and crushes you."},
+            {description: "Sneak around orc", agility: 0.9, strength: 0, win: "You try to make a break for it while the orc is not paying attention to you. You crouch down behind some rocks and slowly but swiftly make your way around the orc. You then start to run away when you're far enough away from the orc.", loss: "You try to seize the opportunity as the orc is not paying attention. You crouch down to make yourself as tiny and unnoticeable as possible. You then slowly make your way around the orc, when suddenly you step on a tiny stick. You don’t even get the chance to react as the orc with a grunt smashes your skull with his mighty club."}
         ],
         background: "Fire_effect_Energy_Animation_Background_Video_,_No_Copyright____Stock_Footage.gif",
         audio: {
-            source: "Slipknot%20-%20Sulfur%20[OFFICIAL%20VIDEO].mp3",
-            startTime: 11
+            source: "",
+            startTime: 0
+        }
+    },
+    {
+        story: "You finally manage to escape the battlefield in order to find the map that leads to the enemy's leader. You take one last glance towards the battlefield before you run into what seems like an endless forest.-SPACE-As you travel along the path, you stumble across a split of the path that goes both left and right.-SPACE-Which path do you choose?",
+        choices: [
+            {description: "Left", agility: 1, strength: 1, win: "You travel along the new path you chose. As you travel along, you stumble upon an abandoned wagon, inside you find …………….", loss: ""},
+            {description: "Right", agility: 1, strength: 1, win: "You travel along the new path you chose. As you travel along, you find a camp, but there is no one there, it seems abandoned. You take your time to search the camp for supplies or something handy to use, when you eventually find …………….", loss: ""}
+        ],
+        background: "",
+        audio: {
+            source: "",
+            startTime: 0
+        }
+    },
+     
+    {
+        story: "You eventually find your way out of the forest, and you can now see an entrance to a cave further down the path. As you approach the entrance, you can feel a shiver down your spine, and you feel cold as the darkness of the cave starts to consume both you and all of the light around you. You follow some narrow stairs, you proceed cautiously as the ground is covered in some kind of goo that smells of dried blood.-SPACE-As you make yourself even further into the cave you hear a huge growl, but as you hear the growl you also make out some words at the same time. “I sense the smell of -pronoun---race-”, you hear as the sound of heavy footsteps approaching you keeps getting louder. “Show yourself -race-!” You slide into the shadows while being as quiet as you can. You now see a glimt of the creature that you now see is a huge mountain troll. You also spot the map your fellow comrade was talking about, hanging off his homesewn belt.",
+        choices: [
+            {description: "", agility: 0, strength: 0.9, win: "", loss: ""},
+            {description: "Sneak around orc", agility: 0.9, strength: 0, win: "", loss: ""}
+        ],
+        background: "",
+        audio: {
+            source: "",
+            startTime: 0
         }
     },
     {
         story: "",
-        choices: []
-    }
+        choices: [
+            {description: "", agility: 0, strength: 0.9, win: "", loss: ""},
+            {description: "Sneak around orc", agility: 0.9, strength: 0, win: "", loss: ""}
+        ],
+        background: "",
+        audio: {
+            source: "",
+            startTime: 0
+        }
+    },
+    {
+        story: "",
+        choices: [
+            {description: "", agility: 0, strength: 0.9, win: "", loss: ""},
+            {description: "Sneak around orc", agility: 0.9, strength: 0, win: "", loss: ""}
+        ],
+        background: "",
+        audio: {
+            source: "",
+            startTime: 0
+        }
+    },
+    
 ];
 
 
