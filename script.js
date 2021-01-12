@@ -59,15 +59,17 @@ let scenes = [
         }
     },
     {
-        story: "",
+        story: "After marching for e few miles, you can feel the air around you become hotter, and a weird salty taste in the air gets stronger as you approach a huge volcano looking mountain. You then start the climb toward the top.-SPACE-As you manage to get over the edge on the top of the mountain, you can see a throne surrounded by geysers spewing out some sort of yellow lava. You then spot some kind of lord sitting on a throne that’s made of this solidified lava.-SPACE-“I can see that you admire my sulfur geysers -race-”. You gaze upon the geysers constantly spewing out its gue all around you. You don’t have time listening to the sulfur lord's words as you raise your sword ready for the final battle.",
         choices: [
-            {description: "", agility: 0, strength: 0.9, win: "", loss: ""},
-            {description: "", agility: 0.9, strength: 0, win: "", loss: ""}
+            {description: "Act", agility: 0, strength: 0, win: "", loss: "You lower your sword. You then try to convince him that the world has seen enough wars, and the correct answer to live in harmony and peace, is to end this madness that’s been raging between races for thousands of years. You then told him to let you show him how beautiful the world can be, and that it should be your mission to change the world as you reach out your hand towards him. You then get blasted in the face by fierce and hot sulfur, melting your face ending your journey instantly."},
+            {description: "Go for the head", agility: 0, strength: 0.8, win: "You start to run towards the lord, sword held high. You approach the Lord at lightning speed as he tosses burning sulfur nodes towards you. You evade all of his attacks, but just before you seem to reach the lord, he sends one final ball straight towards your head. There is no time to evade, so you slice the ball in half with your sword. You then leap towards him, and slice his entire head off with one clean sweep.", loss: "You instantly start to sprint towards the Lord. While running towards him, you start to ready your final blow. You’re just about to slice his head off when the Lord sends off a huge sulfur ball headed straight for you. You try to evade, but you lose your footing, letting the Sulfur devour you."},
+            {description: "Go for the ankles", agility: 0.4, strength: 0.4, win: "You seize your moment leaping towards the Lord as he starts throwing huge chunks of sulfur towards you. He then finally sends one huge chunk towards you. You act quickly, sliding underneath it. When the ball passes over you, you sight the Lord standing only a few feet in front of you. You keep sliding towards the lord sliding your sword to your side, slicing off his ankles making him fall to the ground. You take advantage of the moment, stabbing him in the back also finishing him.", loss: "You try to seize the opportunity sprinting towards the Lord, but as you start to leap, he sends one big sulfur chunk towards you, which then plummets you to the ground, also melting your body, killing you. "},
+            {description: "Evade attack", agility: 0.8, strength: 0, win: "You were just about to attack the lord, when you spot a pit filled with razor sharp rocks shaped from all the sulfur flowing through. You then start to taunt the lord, making gestures for him to come at you. The Lord seems to be humiliated by your taunting, and leaps towards. You quickly roll to the side, as he’s fully charging you, and sends him down the pit, impaling him.", loss: "You’re just about to attack the lord when you see a pit full of sulfur. You then start to taunt the lord making him charge towards you. Just before he grabs you, you roll to the side, but the Lord was able to grab a hold of your foot, dragging you into the pit killing you."}
         ],
-        background: "",
+        background: "Fire_effect_Energy_Animation_Background_Video_,_No_Copyright____Stock_Footage.gif",
         audio: {
-            source: "",
-            startTime: 0
+            source: "Slipknot - Sulfur [OFFICIAL VIDEO].mp3",
+            startTime: 11
         }
     },
     {
