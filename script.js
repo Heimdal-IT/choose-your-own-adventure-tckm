@@ -41,7 +41,7 @@ let scenes = [
         ],
         background: "skog.jfif",
         audio: {
-            source: "",
+            source: "Forest%20Theme.mp3",
             startTime: 0
         }
     },
