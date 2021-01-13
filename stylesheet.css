@@ -4,11 +4,6 @@
 }
 
 
-
-div{
-    
-}
-
 body{
     margin: 0;
 }
@@ -170,6 +165,7 @@ button:hover{
 }
 #story{
     width: 60vw;
+    transition: opacity 2s;
 }
 
 

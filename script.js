@@ -56,11 +56,11 @@ let scenes = [
             {description: "Pickpocket", agility: 0.3, strength: 0, win: "You trail the troll as soon as he turns around. You then manage to get a grip on the map, that's hanging from some sort of hook on the troll’s belt. You slowly slide your hand towards the hook, and yank it off, without ripping the map itself.", loss: "You trail the troll as soon as he turns around. You then slowly make your way up behind it. As you’re almost up behind it, you suddenly slip on a wet rock and fall backwards, ripping the map off the hook as you fall. The troll then turns around, fumbling and confused on what just made that banging sound. The troll then spots you laying on the ground with your face facing it. It only takes the troll a second before it lets out a huge roar, and then clubs your whole body with one blow."},
             {description: "Kill", agility: 0, strength: 0.7, win: "You run towards the troll as fast as you possibly manage. You then leap up on a boulder that stands beside it. You then let out a cry as you jump off the boulder sword drawn. The troll tries to face you, but it’s too late as you decapitate it.", loss: "You run towards the troll sword drawn as you let out your battlecry. The troll then turns towards you and starts to run towards you aswell. You’re both about to clash, but suddenly the troll trips on some rocks falling towards you. You try to leap out of its way, but it’s too late, crushing your body as it lands on you."}
         ],
-        background: "cave.jfif",
+        background: "cave.jpg",
         audio: {
             source: "Cave - Theme.mp3",
             startTime: 0,
-            volume: 0.9
+            volume: 0.6
             
         }
     },
@@ -208,8 +208,7 @@ const subScene = function(lvl, num) {
         let newNum = num + 1;
         nxt.addEventListener("click", function(){subScene(lvl, newNum)});
     };
-    
-    storyCont.innerHTML = contentArr[num];
+    fadeInText(contentArr[num]);
 };
 
 
@@ -221,14 +220,14 @@ const makeChoice = function(btn, lvl) {
     
     btnCont.innerHTML = "";
     if ((agility + strength) > Math.random()*100) {
-        storyCont.innerHTML = personalize(iData.win);
+        fadeInText(personalize(iData.win));
         
         let nxt = document.createElement("button");
         nxt.innerHTML = "Continue.";
         btnCont.appendChild(nxt);
         nxt.addEventListener("click", function(){scene(lvl+1)});
     } else {
-        storyCont.innerHTML = personalize(iData.loss);
+        fadeInText(personalize(iData.loss));
         
         let restart = document.createElement("button");
         restart.innerHTML = "Restart game.";
@@ -241,6 +240,17 @@ const makeChoice = function(btn, lvl) {
         checkpoint.addEventListener("click", function(){scene(lvl)});
     };
     
+};
+
+
+const fadeInText = function(text) {
+    storyCont.style.transition = "opacity 0s";
+    storyCont.style.opacity = 0;
+    storyCont.innerHTML = text;
+    setTimeout(function(){
+        storyCont.style.transition = "opacity 1.5s";
+        storyCont.style.opacity = 1;
+    }, 10);
 };
 
 
