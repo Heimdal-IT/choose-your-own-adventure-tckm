@@ -103,14 +103,19 @@ button:hover{
 }
 #inpName{
     border: none;
+    border-bottom: 4px solid #000;
     background-color: rgba(255,255,255,0.7);
-    font-size: 25px;
+    font-size: 40px;
     line-height: 40px;
     text-align: center;
     font-family: adventure;
     background: none;
     position: relative;
     display: inline-block;
+    outline: none;
+}
+#inpName::placeholder{
+    color: #333;
 }
 #form{
     display: flex;
@@ -145,8 +150,7 @@ button:hover{
     margin: 0;
 }
 
-#form input[type="radio"]:checked::before,
-#form #inpName::before{
+#form input[type="radio"]:checked::before{
     content: "";
     position: absolute;
     display: block;
@@ -163,6 +167,9 @@ button:hover{
 
 .radioCont{
     display: flex;
+}
+#story{
+    width: 60vw;
 }
 
 
