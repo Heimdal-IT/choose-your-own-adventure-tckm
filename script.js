@@ -8,6 +8,7 @@ const background = document.getElementById("div1");
 const bgAudio = document.getElementById("bgAudio");
 const bgAudioSrc = document.getElementById("bgAudioSrc");
 
+
 let scenes = [
     {
         story: "“Get up -RACE-!” you hear a fainted shout in the distance. You find yourself all curled up in the mud. Your vision is completely foggy, and you can barely point out the things around you, when suddenly a big dwarf trembles in front of you and slaps you quite hard and bold on your cheek. “I said get up! This is no place to end the tale soldier!” That's when you finally snap back to reality.-SPACE-“Alright soldier, get ye bum up and keep fighting!” You stumble up on your feet, but you can’t seem to find your sword. “Ye need to find their leader soldier, run into the forest and find an abandoned cave, there it should be a clue to where their leader is located!”.-SPACE-You were just about to leave when suddenly you see an enormous orc charge towards you. You start to tremble as you try to avoid all of his attacks. The orc isn’t quite an experienced fighter, so he manages to swing his club in between two boulders. You then see a sword in the ground and pick it up. You can now make out some kind of path behind the orc that should lead to the cave your fellow comrade was talking about.-SPACE-You then spot a set of shiny chainmail down on the ground. ",
@@ -18,7 +19,8 @@ let scenes = [
         background: "krig.jpg",
         audio: {
             source: "Slagmark - Theme.mp3",
-            startTime: 0
+            startTime: 0, 
+            volume: 0.1
         }
     },
     {
@@ -30,7 +32,8 @@ let scenes = [
         background: "krig.jpg",
         audio: {
             source: "continue",
-            startTime: 0
+            startTime: 0,
+            volume: 0.1
         }
     },
     {
@@ -42,12 +45,13 @@ let scenes = [
         background: "skog.jfif",
         audio: {
             source: "Forest%20Theme.mp3",
-            startTime: 0
+            startTime: 0,
+            volume: 0.7
         }
     },
      
     {
-        story: "You eventually find your way out of the forest, and you can now see an entrance to a cave further down the path. As you approach the entrance, you can feel a shiver down your spine, and you feel cold as the darkness of the cave starts to consume both you and all of the light around you. You follow some narrow stairs, you proceed cautiously as the ground is covered in some kind of goo that smells of dried blood.-SPACE-As you make yourself even further into the cave you hear a huge growl, but as you hear the growl you also make out some words at the same time. “I sense the smell of -pronoun---race-”, you hear as the sound of heavy footsteps approaching you keeps getting louder. “Show yourself -race-!” You slide into the shadows while being as quiet as you can. You now see a glimt of the creature that you now see is a huge mountain troll. You also spot the map your fellow comrade was talking about, hanging off his homesewn belt.",
+        story: "You eventually find your way out of the forest, and you can now see an entrance to a cave further down the path. As you approach the entrance, you can feel a shiver down your spine, and you feel cold as the darkness of the cave starts to consume both you and all of the light around you. You follow some narrow stairs, you proceed cautiously as the ground is covered in some kind of goo that smells of dried blood.-SPACE-As you make yourself even further into the cave you hear a huge growl, but as you hear the growl you also make out some words at the same time. “I sense the smell of -pronoun---race-”, you hear as the sound of heavy footsteps approaching you keeps getting louder. “Show yourself!” You slide into the shadows while being as quiet as you can. You now see a glimt of the creature that you now see is a huge mountain troll. You also spot the map your fellow comrade was talking about, hanging off his homesewn belt.",
         choices: [
             {description: "Pickpocket", agility: 0.3, strength: 0, win: "You trail the troll as soon as he turns around. You then manage to get a grip on the map, that's hanging from some sort of hook on the troll’s belt. You slowly slide your hand towards the hook, and yank it off, without ripping the map itself.", loss: "You trail the troll as soon as he turns around. You then slowly make your way up behind it. As you’re almost up behind it, you suddenly slip on a wet rock and fall backwards, ripping the map off the hook as you fall. The troll then turns around, fumbling and confused on what just made that banging sound. The troll then spots you laying on the ground with your face facing it. It only takes the troll a second before it lets out a huge roar, and then clubs your whole body with one blow."},
             {description: "Kill", agility: 0, strength: 0.7, win: "You run towards the troll as fast as you possibly manage. You then leap up on a boulder that stands beside it. You then let out a cry as you jump off the boulder sword drawn. The troll tries to face you, but it’s too late as you decapitate it.", loss: "You run towards the troll sword drawn as you let out your battlecry. The troll then turns towards you and starts to run towards you aswell. You’re both about to clash, but suddenly the troll trips on some rocks falling towards you. You try to leap out of its way, but it’s too late, crushing your body as it lands on you."}
@@ -55,7 +59,9 @@ let scenes = [
         background: "cave.jfif",
         audio: {
             source: "Cave - Theme.mp3",
-            startTime: 0
+            startTime: 0,
+            volume: 0.9
+            
         }
     },
     {
@@ -69,23 +75,26 @@ let scenes = [
         background: "Fire_effect_Energy_Animation_Background_Video_,_No_Copyright____Stock_Footage.gif",
         audio: {
             source: "Slipknot - Sulfur [OFFICIAL VIDEO].mp3",
-            startTime: 11
+            startTime: 11, 
+            volume: 1
         }
     },
     {
-        story: "",
+        story: "You did it -NAME-, you managed to kill the Sulfur Lord, also letting your fellow army and comrades defeat the Lord’s goons. Your actions have finally brought peace to this realm.-SPACE-Thanks for playing!",
         choices: [
             {description: "", agility: 0, strength: 0.9, win: "", loss: ""},
             {description: "", agility: 0.9, strength: 0, win: "", loss: ""}
         ],
-        background: "",
+        background: "rainbow.jpg",
         audio: {
             source: "",
-            startTime: 0
+            startTime: 0,
+            volume: 1
         }
     },
     
 ];
+
 
 
 let character = {
@@ -161,31 +170,48 @@ const personalize = function(string) {
 
 
 const scene = function(lvl) {
-    let content = scenes[lvl].story;
-    btnCont.innerHTML = "";
-    
-    for (i = 0; i < scenes[lvl].choices.length; i++) {
-        const iData = scenes[lvl].choices[i];
-        
-        let btn = document.createElement("button");
-        btn.innerHTML = iData.description;
-        btn.setAttribute("data-location", "scenes["+ lvl +"].choices["+ i +"]");
-        btnCont.appendChild(btn);
-        
-        btn.addEventListener("click", function(){makeChoice(this, lvl)});
-    };
-
-    storyCont.innerHTML = personalize(content);
-
     background.style.backgroundImage = "url("+ scenes[lvl].background +")";
     
     if(scenes[lvl].audio.source !== "continue"){
         bgAudioSrc.setAttribute("src", scenes[lvl].audio.source);
         bgAudio.load();
         bgAudio.currentTime = scenes[lvl].audio.startTime;
+        bgAudio.volume = scenes[lvl].audio.volume;
     };
     
+    let content = personalize(scenes[lvl].story);
+    let contentArr = content.split("-SPACE-");
+    
+    subScene(lvl, 0);
 };
+
+const subScene = function(lvl, num) {
+    let contentArr = personalize(scenes[lvl].story).split("-SPACE-");
+    
+    btnCont.innerHTML = "";
+    if (num + 1 === contentArr.length) {
+        for (i = 0; i < scenes[lvl].choices.length; i++) {
+            const iData = scenes[lvl].choices[i];
+            if (iData.description) {
+                let btn = document.createElement("button");
+                btn.innerHTML = iData.description;
+                btn.setAttribute("data-location", "scenes["+ lvl +"].choices["+ i +"]");
+                btnCont.appendChild(btn);
+
+                btn.addEventListener("click", function(){makeChoice(this, lvl)});
+            };
+        };    
+    } else {
+        let nxt = document.createElement("button");
+        nxt.innerHTML = "Continue.";
+        btnCont.appendChild(nxt);
+        let newNum = num + 1;
+        nxt.addEventListener("click", function(){subScene(lvl, newNum)});
+    };
+    
+    storyCont.innerHTML = contentArr[num];
+};
+
 
 
 const makeChoice = function(btn, lvl) {
