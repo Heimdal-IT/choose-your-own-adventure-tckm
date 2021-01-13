@@ -14,10 +14,11 @@ body{
 }
 h1{
     text-align: center;
-    font-size: 80px;
+    font-size: 90px;
     margin-top: 0px;
-    line-height: 85px;
+    line-height: 100px;
     margin-bottom: 25px;
+    text-decoration: underline;
 }
 /*h1::after{
     text-shadow: 0 0 30px rgba(0,0,0,1);
@@ -33,12 +34,12 @@ h1{
 #div2{
     background-color: rgba(255, 255,255,0.3599999);
     color: rgb(255,255,255);
-    padding: 50px;
+    padding: 0px 50px 30px 50px;
     position: relative;
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
-    width: 60%;
+    display: inline-block;
     font-family: adventure;
     font-size: 30px;
     line-height: 0.8em;
@@ -67,7 +68,7 @@ h1{
     position: relative;
     margin: auto;
     justify-content: center;
-    height: auto;
+    height: auto;    
     display: block;
 }
 #choice button{
@@ -88,6 +89,7 @@ button{
     padding: 5px;
     line-height: 20px;
     box-sizing: content-box;
+    cursor: pointer;
 }
 button:hover{
     box-shadow: 0px 5px 10px rgba(2,2,2,0.8);
@@ -100,18 +102,15 @@ button:hover{
     margin-top: 20px;
 }
 #inpName{
-    border: 2px  solid;
-    border-radius: 5px;
+    border: none;
     background-color: rgba(255,255,255,0.7);
     font-size: 25px;
     line-height: 40px;
     text-align: center;
-}
-#startButton{
-    
-}
-#startButton:hover{
-    
+    font-family: adventure;
+    background: none;
+    position: relative;
+    display: inline-block;
 }
 #form{
     display: flex;
@@ -126,6 +125,14 @@ button:hover{
     z-index: 100;
     margin: 0 20px;
 }
+#form label:hover{
+    text-shadow: 0 0 5px rgba(0,0,0,0.23);
+}
+#form label:hover input[type="radio"]:checked::before{
+    box-shadow: 0 0 5px rgba(0,0,0,0.23);
+    background-color: rgba(0,0,0,1);
+    opacity: 0.7;
+}
 #form input[type="radio"]{
     position: absolute;
     top: 0;left: 0;right: 0;bottom: 0;
@@ -137,10 +144,9 @@ button:hover{
     visibility: hidden;
     margin: 0;
 }
-#form input[type="radio"]:checked{
-    border: 2px solid black;
-}
-#form input[type="radio"]:checked::before{
+
+#form input[type="radio"]:checked::before,
+#form #inpName::before{
     content: "";
     position: absolute;
     display: block;
