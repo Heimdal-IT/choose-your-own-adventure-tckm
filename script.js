@@ -39,8 +39,8 @@ let scenes = [
     {
         story: "You finally manage to escape the battlefield in order to find the map that leads to the enemy's leader. You take one last glance towards the battlefield before you run into what seems like an endless forest.-SPACE-As you travel along the path, you stumble across a split of the path that goes both left and right.-SPACE-Which path do you choose?",
         choices: [
-            {description: "Left", agility: 1, strength: 0, win: "You travel along the new path you chose. As you travel along, you stumble upon an abandoned wagon, inside you find …………….", loss: ""},
-            {description: "Right", agility: 1, strength: 0, win: "You travel along the new path you chose. As you travel along, you find a camp, but there is no one there, it seems abandoned. You take your time to search the camp for supplies or something handy to use, when you eventually find …………….", loss: ""}
+            {description: "Left", agility: 1, strength: 0, win: "You travel along the new path you chose. As you travel along, you stumble upon an abandoned wagon, inside you find nothing.", loss: "You got lost."},
+            {description: "Right", agility: 1, strength: 0, win: "You travel along the new path you chose. As you travel along, you find a camp, but there is no one there, it seems abandoned. You take your time to search the camp for supplies or something handy to use, when you eventually find some old rugs. They are no use, so you leave them.", loss: "Somehow you got lost."}
         ],
         background: "skog.jfif",
         audio: {
@@ -61,7 +61,6 @@ let scenes = [
             source: "Cave - Theme.mp3",
             startTime: 0,
             volume: 0.6
-            
         }
     },
     {
