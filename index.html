@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Choose a story</title>
+    <link type="text/css" rel="stylesheet" href="stylesheet.css">
+    <link rel="icon" href="favicon.ico">
+</head>
+<body>
+    <div id="div1">
+        <div id="div2">
+            <div id="form">
+               <h1 class="woodFont">Choose your charachter</h1>
+               
+                <div id="inpRace" class="radioCont">
+                    <label for="viking" class="woodFont top"><input type="radio" id="viking" class="button" name="race" value="viking">Viking</label>
+                    <label for="elf" class="woodFont top"><input type="radio" id="elf" class="button" name="race" value="elf">Elf</label>
+                    <label for="dwarf" class="woodFont top"><input type="radio" id="dwarf" class="button" name="race" value="dwarf">Dwarf</label>
+                </div>
+                <div id="Stat">   
+                    <p id="Viking" class="stats bottom1">Strenght: 100, Agility: 100</p>
+                    <p id="Elf" class="stats bottom1">Strenght: 75, Agility: 150</p>
+                    <p id="Dwarf" class="stats bottom1">Strenght: 150, Agility: 75</p>
+                </div>
+                <input type="text" id="inpName" placeholder="Name">
+                <div id="inpSex" class="radioCont">
+                    <label for="male" class="woodFont"><input type="radio" id="male" class="button" name="sex" value="male">Man</label>
+                    <label for="female" class="woodFont"><input type="radio" id="female" class="button" name="sex" value="female">Woman</label>
+                    <label for="unspecified" class="woodFont"><input type="radio" id="unspecified" class="button" name="sex" value="unspecified">Unspecified</label>
+                </div>
+            </div>
+            <p id="story"></p>
+            <div id="choice">
+                <button id="startButton">Start Mission</button>
+            </div>
+        </div>
+    </div>
+
+<audio id="bgAudio" autoplay>
+    <source id="bgAudioSrc" src="" type="audio/mpeg">
+</audio>
+<script src="script.js"></script>
+</body>
+</html>
