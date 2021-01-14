@@ -51,6 +51,8 @@ h1{
     background-size: 300px;
     background-repeat: repeat;
     text-shadow: none;
+    margin-right: 20px;
+    margin-left: 20px;
 }
 #form{
     font-size: 50px;
@@ -123,7 +125,6 @@ button:hover{
     position: relative;
     display: inline-block;
     z-index: 100;
-    margin: 0 20px;
 }
 #form label:hover{
     text-shadow: 0 0 5px rgba(0,0,0,0.23);
@@ -167,9 +168,30 @@ button:hover{
     width: 60vw;
     transition: opacity 2s;
 }
-
-
-
+.stats{
+    font-size: 30px;
+    margin: 0;
+    position: relative;
+}
+#Stat{
+    position: relative;
+    height: 120px;
+}
+#Viking{
+    left: -150px;
+    top: 50px;
+}
+#Elf{
+    left: 0;
+    top: -50px;
+}
+#Dwarf{
+    left: 150px;
+    top: -50px;
+}
+.top{
+    margin: 0 40px;
+}
 
 
 

@@ -11,10 +11,16 @@
         <div id="div2">
             <div id="form">
                <h1 class="woodFont">Choose your charachter</h1>
+               
                 <div id="inpRace" class="radioCont">
-                    <label for="viking" class="woodFont"><input type="radio" id="viking" class="button" name="race" value="viking">Viking</label>
-                    <label for="elf" class="woodFont"><input type="radio" id="elf" class="button" name="race" value="elf">Elf</label>
-                    <label for="dwarf" class="woodFont"><input type="radio" id="dwarf" class="button" name="race" value="dwarf">Dwarf</label>
+                    <label for="viking" class="woodFont top"><input type="radio" id="viking" class="button" name="race" value="viking">Viking</label>
+                    <label for="elf" class="woodFont top"><input type="radio" id="elf" class="button" name="race" value="elf">Elf</label>
+                    <label for="dwarf" class="woodFont top"><input type="radio" id="dwarf" class="button" name="race" value="dwarf">Dwarf</label>
+                </div>
+                <div id="Stat">   
+                    <p id="Viking" class="stats bottom1">Strenght: 100, Agility: 100</p>
+                    <p id="Elf" class="stats bottom1">Strenght: 75, Agility: 150</p>
+                    <p id="Dwarf" class="stats bottom1">Strenght: 150, Agility: 75</p>
                 </div>
                 <input type="text" id="inpName" placeholder="Name">
                 <div id="inpSex" class="radioCont">
@@ -31,7 +37,7 @@
     </div>
 
 <audio id="bgAudio" autoplay>
-    <source id="bgAudioSrc" src="victory.mp3" type="audio/mpeg">
+    <source id="bgAudioSrc" src="" type="audio/mpeg">
 </audio>
 <script src="script.js"></script>
 </body>
